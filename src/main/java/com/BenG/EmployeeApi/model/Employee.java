@@ -8,14 +8,13 @@ package com.BenG.EmployeeApi.model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.*;
-import org.springframework.beans.factory.annotation.Value;
 /**
  *
  * @author bghalami
  */
 
 @Entity
-@Table(name = "employees")
+@Table(name = "Employees")
 public class Employee implements Serializable {
     @Id
     @GeneratedValue(generator = "employee_generator")
@@ -24,17 +23,23 @@ public class Employee implements Serializable {
             sequenceName = "employee_sequence",
             initialValue = 1
     )
+    @Column(name="ID")
     protected Long ID;
+    @Column(name="FirstName")
     protected String FirstName;
+    @Column(name="MiddleInitial")
     protected String MiddleInitial;
+    @Column(name="LastName")
     protected String LastName;
+    @Column(name="DateOfBirth")
     @Temporal(TemporalType.DATE)
     protected Date DateOfBirth;
+    @Column(name="DateOfEmployment")
     @Temporal(TemporalType.DATE)
     protected Date DateOfEmployment;
     // Can be ACTIVE or INACTIVE
-    @Value("ACTIVE")
-    protected String Status;
+    @Column(name="status")
+    protected String status = "ACTIVE";
     
     public Long getID() {
         return ID;
@@ -85,10 +90,10 @@ public class Employee implements Serializable {
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String Status) {
-        this.Status = Status;
+        this.status = status;
     }
 }

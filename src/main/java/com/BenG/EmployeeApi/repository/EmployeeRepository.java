@@ -8,11 +8,12 @@ package com.BenG.EmployeeApi.repository;
 import com.BenG.EmployeeApi.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import java.util.List;
 /**
  *
  * @author bghalami
  */
 @Repository
-public interface EmployeeApiRepository extends JpaRepository<Employee, Long> {
-    
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+    List<Employee> findAllByStatus(String string);
 }
