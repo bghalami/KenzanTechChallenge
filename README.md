@@ -18,6 +18,15 @@ This is an API with the ability to Create, View, Delete, and Edit Employees in a
   - Status defaults to ACTIVE
 "GET": "/api/v1/employees/:id"
   - Show single Employee; ID, FirstName, MiddleInitial, LastName, DateOfBirth, DateOfEmployment, and Status
+  -{  
+  "ID": 1,  
+  "FirstName": "Ben",  
+  "MiddleInitial": "A",  
+  "LastName": "Ghalami",  
+  "DateOfBirth": "1991-08-06",  
+  "DateOfEmployment": "1991-08-16",  
+  "Status": "ACTIVE"
+   }
 "PUT": "/api/v1/employees/:id"
   - Changes Employee info, takes any combination of the following; "FirstName", "LastName", "MiddleInitial",  
   "DateOfBirth", "DateOfEmployment" 
@@ -65,9 +74,9 @@ to populate the database with 8 example employees for you to toy with.
 As you may or may not know, Ruby on Rails was my first love. So it's no surprise I stuck with the tried and true  
 MVC (Model, View, Controller) pattern. Sans View in this case.  
 One of the reasons I enjoy MVC so much is because I have a personal affinity for Abstraction and Encapsulation.  
-Everything lives by itself, not to be bothered unless needed. A goal I strive for in my personal life.
+Everything lives by itself, not to be bothered unless needed. A goal I strive for in my personal life.  
 I feel like the MVC most closely resembles a real world structure, which makes it easy to grasp.  
-Our Model is the blueprint, the Controller is the fusebox, and the View is the lightbulb.
+Our Model is the blueprint, the Controller is the fusebox, and the View is the lightbulb.  
 
 
 ## Built With
