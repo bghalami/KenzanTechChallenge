@@ -14,8 +14,16 @@ This is an API with the ability to Create, View, Delete, and Edit Employees in a
 "POST": "/api/v1/employees"
   - Create an Employee, takes the following; "FirstName", "LastName","MiddleInitial",  
   "DateOfBirth", "DateOfEmployment" 
-  - None of the above fields can be empty
-  - Status defaults to ACTIVE
+  - Takes the following as JSON in the BODY
+  -NONE of the fields can be empty
+  -{    
+  "FirstName": {VARCHAR(30)},  
+  "MiddleInitial": {CHAR(1)},  
+  "LastName": {VARCHAR(30)},  
+  "DateOfBirth": {YYYY-MM-DD},  
+  "DateOfEmployment": {YYYY-MM-DD}  
+   }
+  - MUST include HTTP header `Content-Type` with value `application/json`
 "GET": "/api/v1/employees/:id"
   - Show single Employee; ID, FirstName, MiddleInitial, LastName, DateOfBirth, DateOfEmployment, and Status
   -{  
@@ -28,8 +36,10 @@ This is an API with the ability to Create, View, Delete, and Edit Employees in a
   "Status": "ACTIVE"
    }
 "PUT": "/api/v1/employees/:id"
-  - Changes Employee info, takes any combination of the following; "FirstName", "LastName", "MiddleInitial",  
-  "DateOfBirth", "DateOfEmployment" 
+  - Changes Employee info, takes any combination of the following as JSON in the BODY;  
+"FirstName", "LastName", "MiddleInitial",  
+  "DateOfBirth", "DateOfEmployment"
+  - MUST include HTTP header `Content-Type` with value `application/json`
  "DELETE": "/api/v1/employees/:id"
   - Sets an Employees Status to INACTIVE
   - Employee will not show up in GET by id or GET all employees
