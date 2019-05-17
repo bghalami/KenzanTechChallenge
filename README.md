@@ -10,17 +10,19 @@ This is an API with the ability to Create, View, Delete, and Edit Employees in a
 "GET": "/"
   - Instructions on how to use app
 "GET": "/api/v1/employees"
-	- Show all ACTIVE Employees
+  - Show all ACTIVE Employees
 "POST": "/api/v1/employees"
-	- Create an Employee, takes the following; "FirstName", "LastName","MiddleInitial", "DateOfBirth", "DateOfEmployment" 
+  - Create an Employee, takes the following; "FirstName", "LastName","MiddleInitial",  
+  "DateOfBirth", "DateOfEmployment" 
   - None of the above fields can be empty
   - Status defaults to ACTIVE
 "GET": "/api/v1/employees/:id"
-	- Show single Employee; ID, FirstName, MiddleInitial, LastName, DateOfBirth, DateOfEmployment, and Status
+  - Show single Employee; ID, FirstName, MiddleInitial, LastName, DateOfBirth, DateOfEmployment, and Status
 "PUT": "/api/v1/employees/:id"
-	- Changes GM info, takes any combination of the following; "FirstName", "LastName", "MiddleInitial", "DateOfBirth", "DateOfEmployment" 
+  - Changes Employee info, takes any combination of the following; "FirstName", "LastName", "MiddleInitial",  
+  "DateOfBirth", "DateOfEmployment" 
  "DELETE": "/api/v1/employees/:id"
-	- Sets an Employees Status to INACTIVE
+  - Sets an Employees Status to INACTIVE
   - Employee will not show up in GET by id or GET all employees
   - Employee will persist in DB
   - To use succussfully you must add an HTTP Header with the key 'authorization' and the value 'admin'
@@ -28,11 +30,11 @@ This is an API with the ability to Create, View, Delete, and Edit Employees in a
 
 ## Initial Setup
 
-1. Clone the repository and rename the repository to anything you'd like in one command:
+1. Clone the repository into a directory of your choosing:
   ```shell
   git clone git@github.com:bghalami/KenzanTechChallenge.git
   ```
-2. Change into the new director directory.
+2. Navigate into the new directory.
 
 3. Install the dependencies:
 
@@ -42,17 +44,30 @@ This is an API with the ability to Create, View, Delete, and Edit Employees in a
   
 ## Running the Server Locally
 
-To see your code in action locally, you need to fire up a development server. Use the command:
+To see your code in action locally, you need to fire up a development server. From the root of the project  
+use the command:
 
 ```shell
 mvn spring-boot:run
 ```
 
-Once the server is running, visit in your browser:
+Once the server is running, visit in your browser, or with [PostMan](https://www.getpostman.com/):
 
 * `http://localhost:8080/` to run your application.
 
-* The application loads up the schema-h2.sql and data-h2.sql on startup to populate the database with 8 example employees for you to toy with.
+* The application uses hibernate to load up the schema-h2.sql and data-h2.sql files on startup  
+to populate the database with 8 example employees for you to toy with.
+
+* To quit the server simply press Ctrl + C to shut it down.
+
+## Pick a design pattern, any design pattern!
+#### How about MVC
+As you may or may not know, Ruby on Rails was my first love. So it's no surprise I stuck with the tried and true  
+MVC (Model, View, Controller) pattern. Sans View in this case.  
+One of the reasons I enjoy MVC so much is because I have a personal affinity for Abstraction and Encapsulation.  
+Everything lives by itself, not to be bothered unless needed. A goal I strive for in my personal life.
+I feel like the MVC most closely resembles a real world structure, which makes it easy to grasp.  
+Our Model is the blueprint, the Controller is the fusebox, and the View is the lightbulb.
 
 
 ## Built With
