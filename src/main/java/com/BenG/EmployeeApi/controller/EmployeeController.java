@@ -21,7 +21,7 @@ import org.springframework.http.HttpHeaders;
  */
 
 @RestController
-public class EmployeeApiController {
+public class EmployeeController {
     
     @Autowired
     private EmployeeRepository employeeRepository;
