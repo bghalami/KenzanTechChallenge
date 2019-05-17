@@ -12,8 +12,6 @@ This is an API with the ability to Create, View, Delete, and Edit Employees in a
 "GET": "/api/v1/employees"
   - Show all ACTIVE Employees
 "POST": "/api/v1/employees"
-  - Create an Employee, takes the following; "FirstName", "LastName","MiddleInitial",  
-  "DateOfBirth", "DateOfEmployment" 
   - Takes the following as JSON in the BODY
   -NONE of the fields can be empty
   -{    
@@ -23,6 +21,7 @@ This is an API with the ability to Create, View, Delete, and Edit Employees in a
   "DateOfBirth": {YYYY-MM-DD},  
   "DateOfEmployment": {YYYY-MM-DD}  
    }
+  - ID will Auto-Incrememnt and Status will default to 'ACTIVE'
   - MUST include HTTP header `Content-Type` with value `application/json`
 "GET": "/api/v1/employees/:id"
   - Show single Employee; ID, FirstName, MiddleInitial, LastName, DateOfBirth, DateOfEmployment, and Status
