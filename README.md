@@ -7,7 +7,6 @@ This is an API with the ability to Create, View, Delete, and Edit Employees in a
 ## Endpoints
 
 ```
-{
 "GET": "/"
   - Instructions on how to use app
 "GET": "/api/v1/employees"
