@@ -5,6 +5,8 @@
  */
 package com.BenG.EmployeeApi.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.*;
@@ -14,31 +16,35 @@ import java.util.*;
  */
 
 @Entity
-@Table(name = "Employees")
+@Table(name="employees")
+@JsonAutoDetect(fieldVisibility=JsonAutoDetect.Visibility.ANY, 
+        getterVisibility=JsonAutoDetect.Visibility.NONE, 
+        setterVisibility=JsonAutoDetect.Visibility.NONE)
 public class Employee implements Serializable {
     @Id
-    @GeneratedValue(generator = "employee_generator")
-    @SequenceGenerator(
-            name = "employee_generator",
-            sequenceName = "employee_sequence",
-            initialValue = 1
-    )
-    @Column(name="ID")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @JsonProperty("ID")
     protected Long ID;
-    @Column(name="FirstName")
+    @Column(name="firstname")
+    @JsonProperty("FirstName")
     protected String FirstName;
-    @Column(name="MiddleInitial")
+    @Column(name="middleinitial")
+    @JsonProperty("MiddleInitial")
     protected String MiddleInitial;
-    @Column(name="LastName")
+    @Column(name="lastname")
+    @JsonProperty("LastName")
     protected String LastName;
-    @Column(name="DateOfBirth")
+    @Column(name="dateofbirth")
+    @JsonProperty("DateOfBirth")
     @Temporal(TemporalType.DATE)
     protected Date DateOfBirth;
-    @Column(name="DateOfEmployment")
+    @Column(name="dateofemployment")
+    @JsonProperty("DateOfEmployment")
     @Temporal(TemporalType.DATE)
     protected Date DateOfEmployment;
     // Can be ACTIVE or INACTIVE
     @Column(name="status")
+    @JsonProperty("Status")
     protected String status = "ACTIVE";
     
     public Long getID() {
@@ -93,7 +99,8 @@ public class Employee implements Serializable {
         return status;
     }
 
-    public void setStatus(String Status) {
+    public void setStatus(String status) {
         this.status = status;
     }
+    
 }
