@@ -80,7 +80,7 @@ public class EmployeeController {
     
     @RequestMapping(method=RequestMethod.DELETE, path = "/api/v1/employees/{employeeId}")
     public Employee deleteEmployee(@PathVariable Long employeeId, @RequestHeader HttpHeaders headers) {
-        if (headers.getFirst("authorization").equals("admin")) {
+        if (headers.getFirst("Authorization") != null && headers.getFirst("Authorization").equals("Admin")) {
             return employeeRepository.findById(employeeId)
                 .map(employee -> {
                     employee.setStatus("INACTIVE");

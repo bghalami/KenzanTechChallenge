@@ -44,7 +44,7 @@ This is an API with the ability to Create, View, Delete, and Edit Employees in a
   - Sets an Employees Status to INACTIVE
   - Employee will not show up in GET by id or GET all employees
   - Employee will persist in DB
-  - To use succussfully you must add an HTTP Header with the key 'authorization' and the value 'admin'
+  - To use succussfully you must add an HTTP Header with the key 'Authorization' and the value 'Admin'
 ```
 
 ## Initial Setup
