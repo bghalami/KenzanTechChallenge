@@ -38,9 +38,10 @@ public class EmployeeController {
     
     @GetMapping("/api/v1/employees/{employeeId}")
     public Employee getEmployee(@PathVariable Long employeeId) {
-        Employee employee = employeeRepository.findById(employeeId).get();
-            if(employee.getStatus().equals("ACTIVE")) {return employee;}
-            throw new ResourceNotFoundException("Employee not found with id " + employeeId);
+        return employeeRepository.findById(employeeId)
+                .map (employee -> {
+                    return employee;
+                }).orElseThrow(() -> new ResourceNotFoundException("Employee not found with id " + employeeId));
     }
     
     @PostMapping("/api/v1/employees")
