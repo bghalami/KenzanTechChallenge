@@ -92,7 +92,7 @@ public class EmployeeController {
     }
     
     public String landingPageText() {
-        return "Welcome to Employee API!</br>Check out these NEATO endpoints!</br>"
+        return "<h1>Welcome to Employee API!</h1></br>Check out these NEATO endpoints!</br>"
                 + "&emsp; GET: '/api/v1/employees'</br>"
                 + "&emsp;&emsp; To see index of all employees with ACTIVE Status</br>"
                 + "&emsp; GET: '/api/v1/employees/{id}'</br>"
